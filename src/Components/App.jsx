@@ -1,18 +1,37 @@
 import React from 'react';
 import { CssBaseline } from '@mui/material';
+import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { RouterProvider } from 'react-router-dom';
+import { Provider } from 'react-redux';
 
-import useStyles from './styles';
+import { RootComponent } from './styles';
 import router from '../Router';
+import store from '../Store';
+
+const theme = createTheme({
+  components: {
+    MuiDrawer: {
+      styleOverrides: {
+        paper: {
+          width: 240,
+        },
+      },
+    },
+  },
+});
 
 const App = () => {
-  const classes = useStyles();
+  console.log('App');
 
   return (
-    <div className={classes.root}>
-      <CssBaseline />
-      <RouterProvider router={router} />
-    </div>
+    <Provider store={store}>
+      <ThemeProvider theme={theme}>
+        <RootComponent>
+          <CssBaseline />
+          <RouterProvider router={router} />
+        </RootComponent>
+      </ThemeProvider>
+    </Provider>
   );
 };
 

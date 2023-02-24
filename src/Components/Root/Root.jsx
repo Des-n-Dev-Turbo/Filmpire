@@ -1,19 +1,19 @@
 import React from 'react';
 import { Outlet } from 'react-router-dom';
 
-import useStyles from '../styles';
-import { NavBar } from '../../Components';
+import { ToolBarComponent, ContentComponent } from '../styles';
+import { NavBar } from '../index';
 
 const Root = () => {
-  const classes = useStyles();
+  console.log('Root');
 
   return (
     <>
       <NavBar />
-      <main className={classes.content}>
-        <div className={classes.toolbar} />
+      <ContentComponent>
+        <ToolBarComponent />
         <Outlet />
-      </main>
+      </ContentComponent>
     </>
   );
 };

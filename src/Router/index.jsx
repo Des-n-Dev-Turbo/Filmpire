@@ -1,6 +1,7 @@
 import { createBrowserRouter } from 'react-router-dom';
 
-import { Actors, MovieInformation, Movies, Profile, Root } from '../Components';
+import { Actors, MovieInformation, Movies, Profile } from '../Components';
+import Root from '../Components/Root/Root';
 
 const router = createBrowserRouter([
   {
