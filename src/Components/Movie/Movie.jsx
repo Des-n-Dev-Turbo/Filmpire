@@ -4,7 +4,7 @@ import { Grow, Tooltip, Rating } from '@mui/material';
 import { CustomLink, MovieGrid, PosterImage, TitleTypography } from './styles';
 
 const Movie = ({ movie, i }) => (
-  <MovieGrid item xs={12} sm={6} md={4} lg={3} xl={2.4}>
+  <MovieGrid item xs={12} sm={6} md={4} lg={3} xl={2}>
     <Grow in key={i} timeout={(i + 1) * 250}>
       <CustomLink to={`/movie/${movie.id}`}>
         <PosterImage

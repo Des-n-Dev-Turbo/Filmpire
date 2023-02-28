@@ -10,6 +10,7 @@ export const ToolBarComponent = styled('div')(() => ({
 }));
 
 export const ContentComponent = styled('main')(() => ({
-  flexGrow: 1,
+  width: '100%',
   padding: '2em',
+  flexGrow: 1,
 }));

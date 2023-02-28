@@ -4,9 +4,9 @@ import Movie from '../Movie/Movie';
 
 import { MoviesContainer } from './styles';
 
-const MovieList = ({ movies }) => (
+const MovieList = ({ movies, numberOfMovies }) => (
   <MoviesContainer container>
-    {movies.results.map((movie, i) => (
+    {movies.results.slice(0, numberOfMovies).map((movie, i) => (
       <Movie key={i} movie={movie} i={i} />
     ))}
   </MoviesContainer>
