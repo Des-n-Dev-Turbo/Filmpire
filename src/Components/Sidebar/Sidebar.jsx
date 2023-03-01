@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import {
   Box,
@@ -28,10 +28,14 @@ const redLogo = 'https://fontmeme.com/permalink/210930/8531c658a743debe1e1aa1a2f
 const blueLogo = 'https://fontmeme.com/permalink/210930/6854ae5c7f76597cf8680e48a2c8a50a.png';
 
 const Sidebar = ({ setMobileOpen }) => {
-  const { data, error, isFetching } = useGetGenresQuery();
+  const { data, isFetching } = useGetGenresQuery();
   const theme = useTheme();
   const dispatch = useDispatch();
   const { genreIdOrCategoryName } = useSelector((state) => state.currentGenreOrCategory);
+
+  useEffect(() => {
+    setMobileOpen(false);
+  }, [genreIdOrCategoryName]);
 
   return (
     <>

@@ -27,6 +27,21 @@ const ToggleColorMode = ({ children }) => {
               },
             },
           },
+          MuiCard: {
+            styleOverrides: {
+              root: {
+                position: 'relative',
+              },
+            },
+          },
+          MuiCardContent: {
+            styleOverrides: {
+              root: {
+                position: 'relative',
+                backgroundColor: 'transparent',
+              },
+            },
+          },
         },
         palette: {
           mode,
